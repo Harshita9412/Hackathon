@@ -1,0 +1,82 @@
+/* Style for slider arrows */
+.slick-prev, .slick-next {
+  color: grey;  /* Make the arrow color black */
+  font-size: 30px; /* Increase the size for better visibility */
+  z-index: 1;
+  position: absolute; /* Position them relative to the slider */
+  top: 50%; /* Center them vertically */
+  transform: translateY(-50%); /* Adjust position to make them centered */
+  padding: 10px; /* Add some padding to make the area larger */
+  border-radius: 50%; /* Round the arrows */
+  background-color: transparent; /* Transparent background for cleaner look */
+}
+
+/* Left arrow (previous) */
+.slick-prev {
+  left: -30px; /* Position the previous arrow on the left */
+}
+
+/* Right arrow (next) */
+.slick-next {
+  right: 70px; /* Position the next arrow on the right */
+}
+
+/* Arrow before pseudo-element styling */
+.slick-prev:before,
+.slick-next:before {
+  content: ''; /* Remove default text */
+  display: block;
+  font-size: 30px; /* Make the arrows bigger */
+}
+
+/* Optional: Add hover effect to arrows for better interaction */
+.slick-prev:hover, .slick-next:hover {
+  color: grey;
+  background-color: transparent; /* No background color on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for the service grid to avoid image borders on the left side */
+.slick-slide {
+  padding: 0; /* Remove any padding around the images in the slider */
+  border: 2px solid transparent; /* Default border to avoid layout shift */
+  margin-right: 20px; /* Add margin between the cards */
+}
+
+/* Apply border to the rightmost image */
+.slick-slide:last-child {
+  border-right: 2px solid #333; /* Border only for the rightmost image */
+}
+
+/* Ensuring that images inside the slider have gaps */
+.slick-track {
+  display: flex; /* Flex display to keep the images in a row */
+  gap: 20px;  /* Add space between the items in the track */
+}
+
+/* Styling for the services section */
+.services {
+  width: 90%;
+  margin: 5%;
+  margin-top: 100px;
+}
+
+/* Styling for the slider container */
+.slider-container {
+  width: 100%;
+  margin: 0; /* Remove margin to keep the images aligned correctly */
+  position: relative; /* Make sure the arrows are positioned relative to the container */
+  margin-top: 40px;
+  
+}
+
+/* Optionally add styling to the images within the slider */
+.slick-slide img {
+  border-radius: 10px; 
+  height:350px;
+}
+
+#services_text{
+  text-align: center;
+  font-size: 40px;
+}

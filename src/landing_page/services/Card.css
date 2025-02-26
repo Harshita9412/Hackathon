@@ -1,0 +1,72 @@
+/* Style for each card */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add initial box shadow */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for animation */
+  width: 310px; /* Set the card width */
+  margin: 20px;
+  position: relative; /* To position arrows inside the card */
+  display: flex;
+  flex-direction: column;
+  /* No fixed height, let it grow based on content */
+  height: auto; 
+}
+
+/* Hover effect on the card */
+.card:hover {
+  transform: translateY(-10px); /* Lift the card when hovered */
+  box-shadow: #a5dded;
+}
+
+/* Style for the image inside the card */
+.card img {
+  width: 100%; /* Make image take the full width of the card */
+  height: 200px; /* Fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+/* Style for the title inside the card */
+.card h3 {
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  display: block; /* Ensure the element is displayed properly */
+  word-wrap: break-word; /* Prevent title from overflowing */
+  flex-grow: 0; /* Make sure title does not stretch */
+  height: auto; /* Let the height adjust based on the content */
+  overflow: hidden; /* Hide any text overflow */
+}
+
+/* Styling for the arrows inside the card */
+.card .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center the arrows vertically */
+  font-size: 30px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7); /* Light background for the arrow buttons */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10; /* Ensure the arrows are on top of other elements */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.card .arrow:hover {
+  background-color: rgba(76, 189, 234, 0.7); /* Change background color on hover */
+}
+
+/* Position the left arrow */
+.card .arrow-left {
+  left: 10px; /* Position the left arrow */
+}
+
+/* Position the right arrow */
+.card .arrow-right {
+  right: 10px; /* Position the right arrow */
+}

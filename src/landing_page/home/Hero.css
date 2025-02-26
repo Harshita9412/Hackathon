@@ -1,0 +1,44 @@
+/* Prevent horizontal scrollbar */
+body, html {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.hero {
+    background-image: url("media/images/hero1.jpg"); /* Background image */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background image covers the entire section */
+    background-position: center center; /* Center the background image */
+    position: relative;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;  /* Ensure no margin */
+    padding: 0;  /* Ensure no padding */
+    box-sizing: border-box;  /* Prevent box-sizing issues */
+}
+
+/* Hero content styling */
+.hero_section {
+    color: white;
+    text-align: center;
+    position: absolute; /* Position it absolutely to center the content */
+    margin-top: 23%;
+    /* left: 50%; Move content to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the final position */
+    font-size: 200%;
+    margin-left: 70%;
+    /* border: 1px solid black; */
+    padding: 0;
+    width: 50%;
+}
+
+.heading {
+    font-size: 190%;
+}
+
+p {
+    font-size: 25px;
+}

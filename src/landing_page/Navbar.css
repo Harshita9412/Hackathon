@@ -1,0 +1,85 @@
+/* General styling for the navbar */
+.navbar {
+    background-color: #6eb4c9; /* Slightly darker shade for better contrast */
+    width: 98.8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0;
+    height: 80px; /* Adjusted height for better balance */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 25px; /* Increased padding for more breathing room */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Refined box-shadow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+/* Navbar list items */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Navbar list item */
+.navbar li {
+    display: inline;
+    margin: 0 20px; /* Increased spacing between items */
+}
+
+/* Navbar links */
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500; /* Slightly bolder text for readability */
+    padding: 18px 25px; /* Increased padding for larger clickable area */
+    border-radius: 5px; /* Soft rounded corners */
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+/* Hover effect on links */
+.navbar a:hover {
+    color: #333; /* Darker text for contrast */
+    background-color: #e0e0e0; /* Light background color on hover */
+    transform: scale(1.05); /* Slight zoom effect with scale down */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15); /* Box shadow on hover */
+}
+
+/* Navbar hover effect */
+.navbar:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* More pronounced box-shadow when hovering over navbar */
+}
+
+/* Add a box-shadow effect when scrolling */
+.navbar.scrolled {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Slightly darker shadow when scrolled */
+}
+
+/* Responsive navbar for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px; /* Slightly smaller navbar height on small screens */
+        padding-left: 15px; /* Reduced padding for smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%; /* Full width for easier tapping */
+        padding-left: 0;
+    }
+
+    .navbar li {
+        margin: 8px 0; /* Reduced space between items */
+    }
+
+    .navbar a {
+        font-size: 16px; /* Smaller font size for better mobile readability */
+        padding: 12px 20px; /* Smaller padding on mobile */
+    }
+}
