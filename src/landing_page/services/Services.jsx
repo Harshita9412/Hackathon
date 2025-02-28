@@ -1,25 +1,28 @@
-import React, { useState, useRef } from 'react'; // Import useRef
+import React, { useState, useEffect, useRef } from 'react';
+import axios from "axios";
 import Slider from 'react-slick';
 import Card from './Card';
 import Features from './Features';
 import { CSSTransition } from 'react-transition-group';
 import './Services.css';
 
-const services = [
-  { id: 0, image: "/media/images/individual.avif", name: "Individual Therapy" },
-  { id: 1, image: "/media/images/couples.avif", name: "Couples Therapy" },
-  { id: 2, image: "/media/images/teen.avif", name: "Teen Therapy" },
-  { id: 3, image: "/media/images/psychiatric.avif", name: "Psychiatric Therapy" },
-  { id: 4, image: "/media/images/adult.webp", name: "Adult Therapy" },
-  { id: 5, image: "/media/images/child.jpg", name: "Child Therapy" },
-  { id: 6, image: "/media/images/anxiety.jpeg", name: "Anxiety" },
-  { id: 7, image: "/media/images/self_care.webp", name: "Selfcare" },
-  { id: 8, image: "/media/images/depression.jpg", name: "Depression" },
-];
-
-function Services() {
+const Services = () => {
+  const [services, setServices] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
   const nodeRef = useRef(null); // Create a reference for the transition container
+
+  // Fetch services from the backend
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/services");
+        setServices(response.data);
+      } catch (error) {
+        console.log("Error fetching services: ", error);
+      }
+    };
+    fetchServices();
+  }, []);
 
   const settings = {
     infinite: true,
@@ -76,33 +79,43 @@ function Services() {
         <>
           <div className="slider-container">
             <Slider {...settings}>
-              {services.slice(0, 5).map((service) => (
-                <Card
-                  key={service.id}
-                  image={service.image}
-                  title={service.name}
-                  onClick={() => handleCardClick(service)}
-                />
-              ))}
+              {services.length > 0 ? (
+                services.slice(0, 5).map((service) => (
+                  <div key={service._id} className="col-12 col-md-4 col-lg-4 mb-4">
+                    <Card
+                      image={service.image}
+                      title={service.name}
+                      onClick={() => handleCardClick(service)}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>Loading services...</p>
+              )}
             </Slider>
           </div>
 
           <div className="slider-container">
             <Slider {...settings}>
-              {services.slice(5, 9).map((service) => (
-                <Card
-                  key={service.id}
-                  image={service.image}
-                  title={service.name}
-                  onClick={() => handleCardClick(service)}
-                />
-              ))}
+              {services.length > 0 ? (
+                services.slice(5, 9).map((service) => (
+                  <div key={service._id} className="col-12 col-md-4 col-lg-4 mb-4">
+                    <Card
+                      image={service.image}
+                      title={service.name}
+                      onClick={() => handleCardClick(service)}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>Loading services...</p>
+              )}
             </Slider>
           </div>
         </>
       )}
     </div>
   );
-}
+};
 
 export default Services;
